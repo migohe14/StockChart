@@ -6,7 +6,7 @@
               <hr>
           </div>
           <div class="card-body">
-              <div class="messages">
+              <div>
                   <p>{{ stockprices }}</p>
                   
               </div>
