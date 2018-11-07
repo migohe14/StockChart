@@ -7,11 +7,12 @@
           </div>
           <div class="card-body">
               <div class="messages">
+                  <p>{{ stockprices }}</p>
                   
               </div>
           </div>
       </div>
-      <div class="card-footer">
+      <!-- <div class="card-footer">
           <form @submit.prevent="getData">
               <div class="gorm-group">
                   <label for="user">User:</label>
@@ -20,7 +21,7 @@
             
               <button type="submit" class="btn btn-success">Get data</button>
           </form>
-      </div>
+      </div> -->
   </div>
 </template>
 
@@ -41,9 +42,9 @@ export default {
         }
     },
         mounted() {
-        this.socket.on('MESSAGE', (data) => {
-            // this.stockprices = [...this.messages, data];
-            // // you can also do this.messages.push(data)
+        this.socket.on('DATA', (data) => {
+            console.log(data)
+            this.stockprices = data
         });
     }
 }
